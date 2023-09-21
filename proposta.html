@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }   
+
+        h1 { 
+            background-color: #fac807;
+            border: 1px solid black;
+            text-align: center;
+            margin:auto;
+            padding: 0px;
+            font-size: 28px;
+            font-family: "Poppins",sans-serif;
+            width: 880px;
+        }
+
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+            padding: 40px;
+            border: 1px solid black;
+        }
+
+        
+
+        label {
+            width: 45%;
+        font-weight: bold;
+        text-align: start; /* Alinha à esquerda */
+        padding-right: 10px; /* Espaçamento à direita */
+        }
+
+        
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: 45%;
+            padding: 2px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        input[readonly] {
+            background-color: #f3f3f3;
+        }
+
+        /* Estilos para os radio buttons */
+        input[type="radio"] {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        label[for="santander"],
+        label[for="itau"],
+        label[for="safra"] {
+            margin-right: 10px;
+            margin-bottom: 0;
+            font-weight: normal;
+            text-align: left;
+        }
+
+        .btn_bancos {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .imagem {
+            width: 250px;
+            margin: 0 auto;
+            
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>
+            <img class="imagem" src="./imagem pro seguro.jpg">
+        </h1>
+    </div>
+    <form>
+        <div class="btn_bancos">
+            <span>
+        <label for="banco">Escolha o Banco:</label>
+        </span>
+        <span>
+            <input type="radio" id="santander" name="banco" value="santander" checked>
+            <label for="santander">Santander</label>
+            <input type="radio" id="itau" name="banco" value="itau">
+            <label for="itau">Itaú</label>
+            <input type="radio" id="safra" name="banco" value="safra">
+            <label for="safra">Safra</label>    
+            </span>
+        </div>
+        <label for="tipoServico">Local de Coleta:</label>
+            <input type="text" id="localColeta" name="localColeta" class="right-aligned">
+        
+            <label for="localEntrega">Local de Entrega:</label>
+            <input type="text" id="localEntrega" name="localEntrega" class="right-aligned">
+        
+            <label for="valorTransportado">Valor a ser Transportado:</label>
+            <input type="text" id="valorTransportado" name="valorTransportado" class="right-aligned">
+        
+            <label for="distanciaKM">Distância em KM:</label>
+            <input type="text" id="distanciaKM" name="distanciaKM">
+        
+            <label for="quantidadeVeiculos">Quantidade de Veículos:</label>
+            <input type="text" id="quantidadeVeiculos" name="quantidadeVeiculos">
+        
+            <label for="tempoOperacao">Tempo de Operação:</label>
+            <input type="text" id="tempoOperacao" name="tempoOperacao">
+        
+            <label for="diaAtendimento">Dia de Atendimento:</label>
+            <input type="date" id="diaAtendimento" name="diaAtendimento">
+        
+            <label for="janelaAtendimento">Janela de Atendimento:</label>
+            <input type="text" id="janelaAtendimento" name="janelaAtendimento">
+        
+            <label for="filialAtendimento">Filial de Atendimento (Região):</label>
+            <select id="filialAtendimento" name="filialAtendimento"> </select>
+            <!-- Opções serão preenchidas dinamicamente com JavaScript -->
+        
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" id="cnpj" name="cnpj" readonly>
+        
+            <label for="municipio">UF:</label>
+            <input type="text" id="municipio" name="municipio" readonly>
+        
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" readonly>
+        
+            <label for="precoEmbarque">Preço do Embarque:</label>
+            <input type="text" id="precoEmbarque" name="precoEmbarque">
+        
+            <label for="taxaAdvalores">Taxa de Advalores:</label>
+            <select id="taxaAdvalores" name="taxaAdvalores">
+                <option value="0.022">Urbano</option>
+                <option value="0.044">Interurbano</option>
+            </select>
+        
+            <label for="taxaCustodia">Taxa de Custódia:</label>
+            <input type="text" id="taxaCustodia" name="taxaCustodia" value="0.01155" readonly>
+        
+            <label for="dataBasePreco">Data Base dos Preços:</label>
+            <input type="text" id="dataBasePreco" name="dataBasePreco" readonly>
+        
+            <label for="dataReajuste">Data de Reajuste:</label>
+            <input type="text" id="dataReajuste" name="dataReajuste" readonly>
+        
+            <label for="impostoISS">Imposto - ISS:</label>
+            <input type="text" id="impostoISS" name="impostoISS" value="Incluso aos preços" readonly>
+        
+            <label for="impostoICMS">Imposto - ICMS:</label>
+            <input type="text" id="impostoICMS" name="impostoICMS" value="Incluso aos preços" readonly>
+        
+            <label for="dataValidade">Data da Validade da Proposta:</label>
+            <input type="text" id="dataValidade" name="dataValidade" readonly>
+        
+            <!-- Adicione os botões de opção para escolher o banco -->
+            
+        <input type="submit" value="Criar Proposta">
+    </form>
+</body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.4/xlsx.full.min.js"></script>
+    <script>
+        // Array com os nomes das filiais de atendimento
+        var filiaisAtendimento = [
+            "ALEGRETE", "ALTAMIRA", "ARACAJU", "ARAGUAINA", "ARAPIRACA", "BACABAL", "BAGE", "BARREIRAS", "BAURU", "BELEM", 
+            "BELO HORIZONTE", "BLUMENAU", "BOA VISTA", "BOM JESUS DA LAPA", "BRASILIA", "CABO FRIO", "CACHOEIRO DE ITAPEMIRIM", 
+            "CAMPINA GRANDE", "CAMPINAS", "CAMPO GRANDE", "CAMPOS DOS GOYTACAZES", "CARUARU", "CASCAVEL", "CASTANHAL", 
+            "CAXIAS DO SUL", "CERES", "CHAPECO", "COLATINA", "CORONEL FABRICIANO", "CRICIUMA", "CUIABA", "CURITIBA", 
+            "DIVINOPOLIS", "EUNAPOLIS", "FEIRA DE SANTANA", "FLORIANOPOLIS", "FORTALEZA", "FOZ DO IGUAÇU", "GOIANIA", 
+            "GOVERNADOR VALADARES", "GUANAMBI", "GURUPI", "IMPERATRIZ", "IRECE", "ITABUNA", "ITAITUBA", "ITAJAI", 
+            "ITUMBIARA", "JACOBINA", "JEQUIE", "JOAÇABA", "JOAO PESSOA", "JOINVILLE", "LAGES", "LINHARES", "LONDRINA", 
+            "MACAPA", "MACEIO", "MANAUS", "MANHUAÇU", "MARABA", "MONTES CLAROS", "MOSSORO", "NATAL", "OLINDA", "OURINHOS", 
+            "PARAUAPEBAS", "PASSO FUNDO", "PASSOS", "PATOS", "PAULO AFONSO", "PELOTAS", "PETROLINA", "POÇOS DE CALDAS", 
+            "PORTO ALEGRE", "PORTO VELHO", "POUSO ALEGRE", "PRESIDENTE PRUDENTE", "REDENCAO", "RIBEIRAO PRETO", 
+            "RIO BRANCO", "RIO DE JANEIRO", "RIO GRANDE", "RIO VERDE", "SALGUEIRO", "SALVADOR", "SANTA CRUZ DO SUL", 
+            "SANTA MARIA", "SANTANA DO LIVRAMENTO", "SANTAREM", "SANTO ANGELO", "SANTOS", "S J DO RIO PRETO", 
+            "S J DOS CAMPOS", "SAO LUIS", "SERRA", "SETE LAGOAS", "SP BARRA FUNDA", "SP CAMBUCI", "TEOFILO OTONI", 
+            "TERESINA", "TUBARAO", "TUCURUI", "UBERABA", "UBERLANDIA", "URUGUAIANA", "VARGINHA", "VITORIA DA CONQUISTA", 
+            "VOLTA REDONDA"
+        ];
+
+        // Selecionar o elemento select
+        var select = document.getElementById('filialAtendimento');
+
+        // Preencher o select com as opções
+        for (var i = 0; i < filiaisAtendimento.length; i++) {
+            var option = document.createElement('option');
+            option.value = filiaisAtendimento[i];
+            option.text = filiaisAtendimento[i];
+            select.appendChild(option);
+        }
+
+        // Carregar dados da planilha Excel
+        function loadExcelData() {
+            fetch('Pasta1.xlsx') // Substitua pelo link da sua planilha Excel
+                .then(response => response.arrayBuffer())
+                .then(data => {
+                    var workbook = XLSX.read(data, { type: 'array' });
+                    var sheetName = workbook.SheetNames[0]; // Suponha que os dados estejam na primeira planilha
+                    var worksheet = workbook.Sheets[sheetName];
+
+                    // Crie um objeto para mapear a região com os detalhes da filial
+                    var filiais = {};
+
+                    // AItere pelas células da planilha
+                    for (var cell in worksheet) {
+                        if (cell[0] === 'A' && cell !== 'A1') { 
+                            var regiao = worksheet[cell].v;
+                            var cnpj = worksheet['B' + cell.substring(1)].v; 
+                            var municipio = worksheet['C' + cell.substring(1)].v; 
+                            var cidade = worksheet['D' + cell.substring(1)].v; 
+
+                            // Mapeie a região com os detalhes da filial
+                            filiais[regiao] = {
+                                cnpj: cnpj,
+                                municipio: municipio,
+                                cidade: cidade
+                            };
+                        }
+                    }
+
+                    // Adicione um evento de mudança ao select
+                    select.addEventListener('change', function () {
+                        var selectedRegiao = select.value;
+                        var cnpjInput = document.getElementById('cnpj');
+                        var municipioInput = document.getElementById('municipio');
+                        var cidadeInput = document.getElementById('cidade');
+
+                        // Preencha os campos com base na região selecionada
+                        if (filiais[selectedRegiao]) {
+                            cnpjInput.value = filiais[selectedRegiao].cnpj;
+                            municipioInput.value = filiais[selectedRegiao].municipio;
+                            cidadeInput.value = filiais[selectedRegiao].cidade;
+                        } else {
+                            // Limpe os campos se a região não for encontrada
+                            cnpjInput.value = '';
+                            municipioInput.value = '';
+                            cidadeInput.value = '';
+                        }
+                    });
+                });
+        }
+
+        // Preencher os campos de data com valores gerados em JavaScript
+        var dataBasePrecoInput = document.getElementById('dataBasePreco');
+        var dataReajusteInput = document.getElementById('dataReajuste');
+        var dataValidadeInput = document.getElementById('dataValidade');
+        var diaAtendimentoInput = document.getElementById('diaAtendimento');
+
+        var currentDate = new Date();
+        dataBasePrecoInput.value = currentDate.toISOString().split('T')[0];
+        currentDate.setFullYear(currentDate.getFullYear() + 1);
+        dataReajusteInput.value = currentDate.toISOString().split('T')[0];
+
+        // Event listener para atualizar a data de validade com base na data de atendimento
+        diaAtendimentoInput.addEventListener('change', function () {
+            var diaAtendimentoValue = diaAtendimentoInput.value;
+            var dataDiaAtendimento = new Date(diaAtendimentoValue);
+            dataValidadeInput.value = new Date(dataDiaAtendimento - 1).toISOString().split('T')[0];
+        });
+    
+        // Função para calcular o preço do embarque com base no banco selecionado
+        function calcularPrecoEmbarque() {
+            // Obter os valores de tempo de operação, distância em KM e quantidade de veículos
+            var tempoOperacao = parseFloat(document.getElementById('tempoOperacao').value);
+            var distanciaKM = parseFloat(document.getElementById('distanciaKM').value);
+            var quantidadeVeiculos = parseInt(document.getElementById('quantidadeVeiculos').value);
+
+            // Obter o banco selecionado
+            var bancoSelecionado = document.querySelector('input[name="banco"]:checked').value;
+
+            // Definir as taxas com base no banco selecionado
+            var taxaHora;
+            var taxaKM;
+            
+            if (bancoSelecionado === "santander") {
+                taxaHora = 572; // Santander
+                taxaKM = 12; // Santander
+            } else if (bancoSelecionado === "itau") {
+                taxaHora = 620; // Itaú
+                taxaKM = 16; // Itaú
+            } else if (bancoSelecionado === "safra") {
+                taxaHora = 570; // Safra
+                taxaKM = 12; // Safra
+            }
+
+            // Calcular o preço do embarque com base no tempo de operação, distância e taxas
+            var precoTempo = tempoOperacao * taxaHora;
+            var precoDistancia = distanciaKM * taxaKM;
+            var precoMaior = Math.max(precoTempo, precoDistancia);
+            var precoTotal = precoMaior * quantidadeVeiculos;
+
+            // Exibir o preço do embarque no campo correspondente
+            document.getElementById('precoEmbarque').value = precoTotal.toFixed(2);
+        }
+
+        // Adicionar um evento de mudança aos campos relevantes para calcular o preço do embarque
+        document.getElementById('tempoOperacao').addEventListener('change', calcularPrecoEmbarque);
+        document.getElementById('distanciaKM').addEventListener('change', calcularPrecoEmbarque);
+        document.getElementById('quantidadeVeiculos').addEventListener('change', calcularPrecoEmbarque);
+
+        // Adicionar um evento de mudança aos botões de opção para calcular com base no banco selecionado
+        var radioButtons = document.querySelectorAll('input[name="banco"]');
+        radioButtons.forEach(function(radio) {
+            radio.addEventListener('change', calcularPrecoEmbarque);
+        });
+
+        // Chame a função para carregar os dados quando a página carregar
+        window.addEventListener('load', loadExcelData);
+
+    </script>
+</body>
+</html>
